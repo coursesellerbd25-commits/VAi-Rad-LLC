@@ -8,7 +8,7 @@ The following wireframes represent the initial UI planning for the application. 
 
 # 1. Login Page
 
-![Login Wireframe](Login Page.png)
+![Login Wireframe](login-page.png)
 
 ### Purpose
 
