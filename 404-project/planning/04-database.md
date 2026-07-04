@@ -1,5 +1,7 @@
 # Database Design
 
+![ER Diagram](database-er-diagram.drawio.png)
+
 ## Overview
 
 The application uses a relational database (SQLite) managed by Django ORM.
