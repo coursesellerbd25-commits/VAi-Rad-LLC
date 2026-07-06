@@ -1,23 +1,22 @@
 from django.conf import settings
 from django.conf.urls.static import static
+from django.contrib import admin
+from django.urls import path, include
+
 from rest_framework_simplejwt.views import (
     TokenObtainPairView,
     TokenRefreshView,
 )
-from django.contrib import admin
-from django.urls import path, include
 
 urlpatterns = [
-    path('api/login/', TokenObtainPairView.as_view(), name='login'),
-    path('api/token/refresh/', TokenRefreshView.as_view(), name='refresh'),
-]
-urlpatterns = [
-    path('admin/', admin.site.urls),
+    path("admin/", admin.site.urls),
 
-    path('api/', include('tasks.urls')),
+    # Task API
+    path("api/", include("tasks.urls")),
 
-    path('api/login/', TokenObtainPairView.as_view()),
-    path('api/token/refresh/', TokenRefreshView.as_view()),
+    # Auth
+    path("api/login/", TokenObtainPairView.as_view(), name="login"),
+    path("api/token/refresh/", TokenRefreshView.as_view(), name="refresh"),
 ]
 
 if settings.DEBUG:
