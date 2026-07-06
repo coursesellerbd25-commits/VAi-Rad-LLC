@@ -1,12 +1,15 @@
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
 import Login from "./pages/Login";
-import Tasks from "./pages/Tasks";
+import TasksPage from "./pages/TasksPage";
 
 function App() {
   return (
     <Routes>
+      {/* Default route redirect */}
+      <Route path="/" element={<Navigate to="/login" />} />
+
       <Route path="/login" element={<Login />} />
-      <Route path="/tasks" element={<Tasks />} />
+      <Route path="/tasks" element={<TasksPage />} />
     </Routes>
   );
 }
