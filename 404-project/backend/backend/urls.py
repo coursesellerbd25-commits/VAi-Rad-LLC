@@ -14,6 +14,9 @@ urlpatterns = [
     # Task API
     path("api/", include("tasks.urls")),
 
+    # Annotation API
+    path("api/annotations/", include("annotations.urls")),
+
     # Auth
     path("api/login/", TokenObtainPairView.as_view(), name="login"),
     path("api/token/refresh/", TokenRefreshView.as_view(), name="refresh"),
